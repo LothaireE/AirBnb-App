@@ -5,7 +5,7 @@ export default function HomeScreen() {
   const navigation = useNavigation();
   return (
     <View>
-      <Text>Welcome home!</Text>
+      <Text>Welcome home!2</Text>
       <Button
         title="Go to Profile"
         onPress={() => {
