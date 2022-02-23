@@ -62,8 +62,14 @@ export default function SignUpScreen({ setToken }) {
         }
       }
     } catch (error) {
-      console.log(error.response.data.error);
-      setErrorMessage(error.response.data.error);
+      console.log("=====>", error.response.data.error);
+
+      if (
+        error.response.data.error === "This username already has an account." ||
+        error.response.data.error === "This email already has an account."
+      ) {
+        setErrorMessage(error.response.data.error);
+      }
     }
   };
 
@@ -165,8 +171,6 @@ const styles = StyleSheet.create({
   },
   container: {
     height: height,
-    borderWidth: 2,
-    borderColor: "red",
     flex: 1,
     flexDirection: "column",
     backgroundColor: "#FFFFFF",
@@ -175,8 +179,8 @@ const styles = StyleSheet.create({
   // ********************** logo block *********************
 
   logoBlock: {
-    borderColor: "black",
-    borderWidth: 2,
+    // borderColor: "black",
+    // borderWidth: 2,
     fontSize: 12,
     alignItems: "center",
     justifyContent: "center",
@@ -196,8 +200,8 @@ const styles = StyleSheet.create({
   // ********************** formulaire top **********************
 
   formBlockTop: {
-    borderColor: "black",
-    borderWidth: 2,
+    // borderColor: "black",
+    // borderWidth: 2,
     height: "60%",
     width: "80%",
     marginHorizontal: "10%",
@@ -225,9 +229,8 @@ const styles = StyleSheet.create({
   //******************* formulaire Bottom *******************
 
   formBlockBottom: {
-    // marginTop: 30,
-    borderColor: "black",
-    borderWidth: 2,
+    // borderColor: "black",
+    // borderWidth: 2,
     alignItems: "center",
     justifyContent: "space-evenly",
     height: "30%",

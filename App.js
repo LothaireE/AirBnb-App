@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import HomeScreen from "./containers/HomeScreen";
 import ProfileScreen from "./containers/ProfileScreen";
 import SignInScreen from "./containers/SignInScreen";
@@ -87,7 +88,7 @@ export default function App() {
                       <Stack.Screen
                         name="Home"
                         options={{
-                          title: "My App",
+                          title: "logo",
                           headerStyle: { backgroundColor: "red" },
                           headerTitleStyle: { color: "white" },
                         }}
@@ -106,15 +107,28 @@ export default function App() {
                     </Stack.Navigator>
                   )}
                 </Tab.Screen>
+                {/* <Tab.Screen
+                  name="TabAroundMe"
+                  options={{
+                    tabBarLabel: "Around me",
+                    tabBarIcons: ({ color, size }) => (
+                      <MaterialCommunityIcons
+                        name="map-marker-outline"
+                        size={24}
+                        color="black"
+                      />
+                    ),
+                  }}
+                /> */}
                 <Tab.Screen
                   name="TabSettings"
                   options={{
                     tabBarLabel: "Settings",
                     tabBarIcon: ({ color, size }) => (
-                      <Ionicons
-                        name={"ios-options"}
-                        size={size}
-                        color={color}
+                      <MaterialCommunityIcons
+                        name="map-marker-outline"
+                        size={24}
+                        color="black"
                       />
                     ),
                   }}

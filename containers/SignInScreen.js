@@ -45,7 +45,8 @@ export default function SignInScreen({ setToken }) {
         }
       }
     } catch (error) {
-      setErrorMessage(error.response.data.error);
+      console.log(error.response.data.error);
+      setErrorMessage("mail adress and/or password incorrect");
     }
   };
 
@@ -113,8 +114,7 @@ const styles = StyleSheet.create({
   },
   container: {
     height: height,
-    borderWidth: 2,
-    borderColor: "red",
+
     flex: 1,
     flexDirection: "column",
     backgroundColor: "#FFFFFF",
